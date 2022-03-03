@@ -10,10 +10,21 @@ import { Movies } from '../../Movie';
 })
 export class DisplayMoviesComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private movieService: MovieService,
+  ) { }
   title: string = "Movies"
+  movies!: Movies;
+  moviesArray!: Movies[];
 
   ngOnInit(): void {
+    this.movieService.fetchMovies().subscribe(res => {
+      console.log("API: ");
+      console.log(res)
+      this.movies = res;
+      console.log("Movies: ")
+      console.log(this.movies);
+    })
   }
-
+  
 }
