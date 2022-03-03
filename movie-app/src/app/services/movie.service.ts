@@ -8,7 +8,7 @@ import { Movies } from '../Movie';
   providedIn: 'root'
 })
 export class MovieService {
-  //Id på filmer som skall visas på framsidan, fyll i med flera
+  //Id på filmer som skall visas på framsidan, lägg till flera.
   private ids = ['tt3896198', 'tt1160419','tt0120338', 'tt10223460', 'tt0117571', 'tt0245429',];
 
   constructor(

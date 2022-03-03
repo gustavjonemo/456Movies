@@ -22,7 +22,7 @@ export class DisplayMoviesComponent implements OnInit {
     this.getMovies();
   }
 
-  //Fyller i array movies som skall visa upp filmerna i html filen, använder interface för att jämföra JSON med
+  //Fyller i array movies som skall visa upp filmerna i html filen, använder interface för att fylla i värden från JSON
   getMovies() {
     this.movieService.getMovieId().forEach(id => {
       this.movieService.fetchMovie(id).subscribe(res => {
