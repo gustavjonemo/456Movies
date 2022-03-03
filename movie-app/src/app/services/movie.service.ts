@@ -17,7 +17,12 @@ export class MovieService {
 
   //http fetch request av en film med ett specifikt id.
   fetchMovie(imdbId: string): Observable<Movies> {
-    console.log("Here");
+    //console.log("Here");
+    const apiURL = `http://www.omdbapi.com/?i=${imdbId}&apikey=1d799ea5&plot=full`;
+    return this.http.get<Movies>(apiURL);
+  }
+
+  fetchFullMoviePlot(imdbId: string){
     const apiURL = `http://www.omdbapi.com/?i=${imdbId}&apikey=1d799ea5`;
     return this.http.get<Movies>(apiURL);
   }
