@@ -8,10 +8,21 @@
   border-radius: 5px;
 }
 
+.overflow-text {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  
+  font-size: 1.3rem;
+  margin: 0;
+  background: white;
+}
+
 .column {
   float: left;
-  width: 25%;
-  padding: 5px;
+  width: auto;
+  padding: 8px;
 }
 
 .row {
