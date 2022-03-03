@@ -10,6 +10,7 @@ import { Movies } from '../../Movie';
 })
 export class DisplayMoviesComponent implements OnInit {
   title: string = "Movies"
+  //använd inte !: eller | undefined, gör movies till icket iterable.
   movies: Movies[] = [];
 
   constructor(
@@ -26,21 +27,7 @@ export class DisplayMoviesComponent implements OnInit {
     this.movieService.getMovieId().forEach(id => {
       this.movieService.fetchMovie(id).subscribe(res => {
         //console.log(typeof(res.Title)); //Kolla om den är compatible med interface
-        this.movies.push({
-          Title: res.Title,
-          Year: res.Year,
-          Rated: res.Rated,
-          Released: res.Released,
-          Runtime: res.Runtime,
-          Genre: res.Genre,
-          Director: res.Director,
-          Writer: res.Writer,
-          Actors: res.Actors,
-          Plot: res.Plot,
-          Poster: res.Poster,
-          imdbID: res.imdbID,
-          imdbRating: res.imdbRating
-        });
+        this.movies.push(res);
       })
     })
   }
