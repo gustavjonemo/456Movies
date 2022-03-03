@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Movies } from '../Movie';
-import { map } from 'rxjs/operators'
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  //Id på filmer som skall visas på framsidan
-  private ids = ['tt3896198', 'tt1160419'];
+  //Id på filmer som skall visas på framsidan, fyll i med flera
+  private ids = ['tt3896198', 'tt1160419','tt0120338', 'tt10223460', 'tt0117571', 'tt0245429',];
 
   constructor(
     private http: HttpClient
