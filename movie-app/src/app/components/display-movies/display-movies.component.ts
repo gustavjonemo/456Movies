@@ -25,7 +25,7 @@ export class DisplayMoviesComponent implements OnInit {
   getMovies(): void {
     this.movieService.getMovieId().forEach(id => {
       this.movieService.fetchMovie(id).subscribe(res => {
-        //console.log(typeof(res.Title)); //Kolla om den är compatible med interface  awda
+        //console.log(typeof(res.Title)); //Kolla om den är compatible med interface
         this.movies.push({
           Title: res.Title,
           Year: res.Year,
