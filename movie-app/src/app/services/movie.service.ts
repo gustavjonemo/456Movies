@@ -22,11 +22,6 @@ export class MovieService {
     return this.http.get<Movies>(apiURL);
   }
 
-  fetchFullMoviePlot(imdbId: string){
-    const apiURL = `http://www.omdbapi.com/?i=${imdbId}&apikey=1d799ea5`;
-    return this.http.get<Movies>(apiURL);
-  }
-
   //Används för att hämta alla filmernas id.
   getMovieId(){
     return this.ids;
