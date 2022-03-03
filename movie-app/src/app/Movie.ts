@@ -13,5 +13,6 @@ export interface Movies {
     Country: string,
     Awards: string,
     Poster: string,
+    Ratings: string[],
 }
 //något mer?
