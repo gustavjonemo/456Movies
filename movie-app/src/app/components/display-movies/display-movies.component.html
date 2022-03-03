@@ -1,6 +1,16 @@
 <h1> {{ title }} </h1>
 
-<h2>list of movies</h2>
+
+
+<div class="film-container">
+
+  <div   *ngFor="let movie of movies">
+    <img src={{movie.Poster}} alt={{movie.Title}} width="189.33" height="280.2">
+  </div>
+</div>
+
+
+
 <ul *ngFor="let movie of movies">
   <li>{{movie.Title + " " + movie.Genre}}</li>
 </ul>

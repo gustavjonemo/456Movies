@@ -1,0 +1,4 @@
+.film-container{
+  display: grid;
+  gap: 25px 25px;
+}
