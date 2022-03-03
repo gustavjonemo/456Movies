@@ -1,5 +1,6 @@
 <h1> {{ title }} </h1>
 
-<img src={{movies.Poster}} >
-<p>{{movies.Title}}</p>
-<p>{{movies.Plot}}</p>
+<h2>list of movies</h2>
+<ul *ngFor="let movie of movies">
+  <li>{{movie.Title}}</li>
+</ul>
