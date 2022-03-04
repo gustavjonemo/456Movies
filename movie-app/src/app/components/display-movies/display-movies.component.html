@@ -6,20 +6,20 @@
     >   
         <a
             class="movie-name"
-            [routerLink]="['/movie-details', movie.imdbID]" 
+            routerLink="{{ '/movie-details/'+movie.imdbID }}"
         >
             <img 
             class="img-thumbnail blur" 
-            src={{movie.Poster}} 
-            alt={{movie.Title}} 
+            src="{{ movie.Poster }}" 
+            alt="{{ movie.Title }}" 
             width="189.33" 
             height="280.2"
             >
         </a>
         <h3 class="overflow-text">
             <a 
-                [title]="movie.Title"
-                [routerLink]="['/movie-details', movie.imdbID]"
+                title="{{ movie.Title }}"
+                routerLink="{{ '/movie-details/'+movie.imdbID }}"
             >
                 {{ movie.Title }}
             </a>
