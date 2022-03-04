@@ -15,7 +15,7 @@ export class MovieService {
     private http: HttpClient
   ) { }
 
-  //http fetch request av en film med ett specifikt id.
+  //http fetch request av en film med ett specifikt id. &plot=full för hela ploten av filmen
   fetchMovie(imdbId: string): Observable<Movies> {
     //console.log("Here");
     const apiURL = `http://www.omdbapi.com/?i=${imdbId}&apikey=1d799ea5&plot=full`;
