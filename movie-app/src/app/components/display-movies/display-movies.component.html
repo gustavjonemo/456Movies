@@ -11,17 +11,13 @@
             width="189.33" 
             height="280.2"
         >
-       
-
-
         <h3 class="overflow-text">
             <a 
-            [title]="movie.Title"
-            [routerLink]="['/movies', movie.imdbID]" href="/movie-details/${movies.imdbID}">
-            
+                [title]="movie.Title"
+                [routerLink]="['/movie-details', movie.imdbID]"
+            >
                 {{ movie.Title }}
             </a>
-            
         </h3>
         <div>
             <span> {{movie.Year}} </span>
