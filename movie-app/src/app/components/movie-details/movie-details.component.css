@@ -1,0 +1,26 @@
+.synopsis-container {
+    max-width: 1370px;
+    margin: 30px auto;
+    overflow: auto;
+    min-height: 300px;
+    padding: 30px;
+    border-radius: 5px;
+}
+
+nav {
+    float: left;
+    width: 25%;
+    padding: 0px;
+}
+
+.plot {
+    margin: 10px;
+}
+
+.imdb-style {
+    color: #FFA600;
+}
+
+.img-thumbnail {
+    border-radius: 8px;
+}

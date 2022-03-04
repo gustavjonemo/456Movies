@@ -3,7 +3,6 @@
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
   padding: 30px;
   border-radius: 5px;
 }
@@ -13,10 +12,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  
   font-size: 1.3rem;
   margin: 0;
-  background: white;
 }
 
 .column {
@@ -39,7 +36,26 @@
   height: 4px;
   width: 4px;
   margin: 5px 5px;
-  background-color: #000000;
+  background-color: #ffffff;
   border-radius: 50%;
   display: inline-block;
+}
+
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color:rgb(162, 0, 255);
+}
+
+img:hover {
+  opacity: 0.5;
+  filter: blur(0.5px);
 }

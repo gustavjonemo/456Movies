@@ -26,8 +26,8 @@ export class MovieDetailsComponent implements OnInit {
     const routeParams = this.route.snapshot.paramMap;
     const movieIdFromRoute = String(routeParams.get('imdbID'));
 
-    this.movieService.fetchMovie(String(movieIdFromRoute)).subscribe(res => {
+    this.movieService.fetchMovie(movieIdFromRoute).subscribe(res => {
       this.movies.push(res);
-    })
+    });
   }
 }

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DisplayMoviesComponent } from './components/display-movies/display-movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
+//Lägg in här om det skall komma in flera routes, renderas i <router-outlet>
 const routes: Routes = [
   {path: '', component: DisplayMoviesComponent},
   {path:"movie-details/:imdbID", component: MovieDetailsComponent}

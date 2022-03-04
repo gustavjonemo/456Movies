@@ -1,6 +1,24 @@
-<p>movie-details works maybe!</p>
 <div 
+    class="synopsis-container"
     *ngFor="let movie of movies"
 >   
-    {{ movie.Title }}
+    <div>
+        <nav>
+            <img class="img-thumbnail" src={{movie.Poster}}/>
+        </nav>
+    </div>
+
+    <div>
+        <h1>{{ movie.Title }}</h1>
+        <h4>Released: {{ movie.Released }}</h4>
+        <h4>Genre: {{ movie.Genre }}</h4>
+        <h4>Director/s: {{ movie.Director }}</h4>
+        <h4>Writer/s: {{ movie.Writer }}</h4>
+        <h4>Actors: {{ movie.Actors }}</h4>
+        <p class="plot">{{ movie.Plot }}</p>
+    </div>
+
+    <div>
+        <h4 class="imdb-style">IMDB: {{ movie.imdbRating }}</h4>
+    </div>
 </div>

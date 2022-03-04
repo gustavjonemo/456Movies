@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { MovieService } from '../../services/movie.service';
 import { Movies } from '../../Movie';
 
@@ -10,9 +9,10 @@ import { Movies } from '../../Movie';
 })
 export class DisplayMoviesComponent implements OnInit {
   title: string = "Movies"
-  //använd inte !: eller | undefined, gör movies till icket iterable.
+  //Använd inte !: eller | undefined, gör movies till icket iterable.
   movies: Movies[] = [];
 
+  //Initiera alltid externa enheter i konstruktorn
   constructor(
     private movieService: MovieService,
   ) { }
