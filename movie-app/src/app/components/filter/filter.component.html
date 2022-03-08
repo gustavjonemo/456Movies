@@ -2,22 +2,22 @@
     <form [formGroup]="checkboxGroupForm">
         <div class="btn-group" role="group">
           <label class="btn-primary" ngbButtonLabel>
-            <input type="checkbox" class="btn-check" formControlName="left" ngbButton> Action 
+            <input type="checkbox" class="btn-check" formControlName="action"  (click)="onSelect('action')" ngbButton> Action 
           </label>
           <label class="btn-primary" ngbButtonLabel>
-            <input type="checkbox" class="btn-check" formControlName="middle" ngbButton> Adventure
+            <input type="checkbox" class="btn-check" formControlName="adventure" (click)="onSelect('adventure')" ngbButton> Adventure
           </label>
           <label class="btn-primary" ngbButtonLabel>
-            <input type="checkbox" class="btn-check" formControlName="right" ngbButton> Animation
+            <input type="checkbox" class="btn-check" formControlName="animation" (click)="onSelect('animation')" ngbButton> Animation
           </label>
           <label class="btn-primary" ngbButtonLabel>
-            <input type="checkbox" class="btn-check" formControlName="left" ngbButton> Anime
+            <input type="checkbox" class="btn-check" formControlName="anime" (click)="onSelect('anime')" ngbButton> Anime
           </label>
           <label class="btn-primary" ngbButtonLabel>
-            <input type="checkbox" class="btn-check" formControlName="middle" ngbButton> Biography
+            <input type="checkbox" class="btn-check" formControlName="biography" (click)="onSelect('biography')" ngbButton> Biography
           </label>
           <label class="btn-primary" ngbButtonLabel>
-            <input type="checkbox" class="btn-check" formControlName="right" ngbButton> Christmas
+            <input type="checkbox" class="btn-check" formControlName="christmas" (click)="onSelect('christmas')" ngbButton> Christmas
           </label>
    
          

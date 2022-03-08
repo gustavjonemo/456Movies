@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -20,8 +20,6 @@ export class FilterComponent implements OnInit {
   constructor(private movieService: MovieService, formBuilder : FormBuilder
     ) {
       this.checkboxGroupForm = formBuilder.group({ // göra typ en for each där vi fyller alla genres som finns
-        
-        
         action: false,
         adventure: false,
         animation: false,
@@ -33,8 +31,16 @@ export class FilterComponent implements OnInit {
 
   ngOnInit(): void {
     this.getMovies();
-    this.addGenres();
+    //this.addGenres();
+  }
+
+  onSelect(genre: string){
+    this.filterGenre = genre; 
+    console.log(this.filterGenre);
+    //this.checkboxGroupForm.get(genre)?.setValue(false);
+    console.log(this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
     this.filterMovies();
+    console.log(this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
   }
 
   addGenres(){
@@ -46,7 +52,7 @@ export class FilterComponent implements OnInit {
   }
   filterMovies(){
     this.movies.forEach(movie => {
-      if(movie.Genre == this.filterGenre){ //kontroll
+      if(movie.Genre.toLowerCase == this.filterGenre.toLowerCase){ //kontroll
         this.filteredMovies.push(movie);  //ev tilläggning
       }
     });
