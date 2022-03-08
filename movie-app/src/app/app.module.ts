@@ -8,6 +8,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FilterComponent } from './components/filter/filter.component';
 import { DisplayMoviesComponent } from './components/display-movies/display-movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
