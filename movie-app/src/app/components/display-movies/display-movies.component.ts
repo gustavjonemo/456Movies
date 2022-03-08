@@ -8,7 +8,7 @@ import { Movies } from '../../Movie';
   styleUrls: ['./display-movies.component.css']
 })
 export class DisplayMoviesComponent implements OnInit {
-  title: string = "Movies"
+  title: string = "Featured Movies"
   //Använd inte !: eller | undefined, gör movies till icket iterable.
   movies: Movies[] = [];
 

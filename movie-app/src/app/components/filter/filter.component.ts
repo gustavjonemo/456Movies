@@ -11,7 +11,6 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
-  temp: any[] = [];
   public checkboxGroupForm: FormGroup;
   title: string = 'Filter component';
   movies: Movies[] = [];
@@ -36,12 +35,17 @@ export class FilterComponent implements OnInit {
   }
 
   onSelect(genre: string){
-    this.filterGenre = genre; 
-    console.log("Vald Genre: "+this.filterGenre);
+    //this.filterGenre = genre; 
+    console.log("Vald Genre: "+genre);
     //this.checkboxGroupForm.get(genre)?.setValue(false);
     console.log("Pressed: "+this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
-    this.filterMovies(this.filterGenre);
-    //console.log(this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
+
+    this.filterMovies(genre); //Skickar in genre som skall filtreras
+    console.log(this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
+
+    //Tömmer de efter vi är klara, funkar ba med en kategori
+    this.movies = [];
+    this.filteredMovies = [];
   }
 
   addGenres(){
@@ -53,12 +57,11 @@ export class FilterComponent implements OnInit {
   }
 
   filterMovies(genre: string){
-    this.getMovies();
-    console.log("Film på array index 0")
-    console.log(this.temp);
-
+    this.getMovies(); //Hämtar filmerna som skall filtreras
     this.movies.forEach(movie => {
-      if(movie.Genre.toLowerCase === genre.toLowerCase){ //kontroll
+      //console.log(movie.Genre.toLowerCase() + " " + genre.toLowerCase())
+      if( movie.Genre.toLowerCase().includes( genre.toLowerCase() ) ){ //kontroll
+        //console.log("Vi kom in")
         this.filteredMovies.push(movie);  //ev tilläggning
       }
     });
