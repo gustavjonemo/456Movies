@@ -10,7 +10,7 @@
 nav {
     float: left;
     width: 25%;
-    padding: 0px;
+    padding: 0px 0px 20px;
 }
 
 .plot {
@@ -21,6 +21,6 @@ nav {
     color: #FFA600;
 }
 
-.img-thumbnail {
+.thumbnail {
     border-radius: 8px;
 }

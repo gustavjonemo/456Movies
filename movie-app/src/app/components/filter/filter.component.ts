@@ -11,6 +11,7 @@ import { MovieService } from 'src/app/services/movie.service';
   styleUrls: ['./filter.component.css']
 })
 export class FilterComponent implements OnInit {
+  temp: any[] = [];
   public checkboxGroupForm: FormGroup;
   title: string = 'Filter component';
   movies: Movies[] = [];
@@ -30,17 +31,17 @@ export class FilterComponent implements OnInit {
      }
 
   ngOnInit(): void {
-    this.getMovies();
+    //this.getMovies();
     //this.addGenres();
   }
 
   onSelect(genre: string){
     this.filterGenre = genre; 
-    console.log(this.filterGenre);
+    console.log("Vald Genre: "+this.filterGenre);
     //this.checkboxGroupForm.get(genre)?.setValue(false);
-    console.log(this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
-    this.filterMovies();
-    console.log(this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
+    console.log("Pressed: "+this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
+    this.filterMovies(this.filterGenre);
+    //console.log(this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
   }
 
   addGenres(){
@@ -50,9 +51,14 @@ export class FilterComponent implements OnInit {
       }
     });
   }
-  filterMovies(){
+
+  filterMovies(genre: string){
+    this.getMovies();
+    console.log("Film på array index 0")
+    console.log(this.temp);
+
     this.movies.forEach(movie => {
-      if(movie.Genre.toLowerCase == this.filterGenre.toLowerCase){ //kontroll
+      if(movie.Genre.toLowerCase === genre.toLowerCase){ //kontroll
         this.filteredMovies.push(movie);  //ev tilläggning
       }
     });
@@ -66,5 +72,4 @@ export class FilterComponent implements OnInit {
       });
     });
   }
-
 }
