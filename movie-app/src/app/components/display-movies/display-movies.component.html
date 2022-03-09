@@ -1,8 +1,8 @@
-<div class="movie-container row">
+<div *ngIf="categoryClicked" class="movie-container row">
     <h1> {{ title }} </h1>
     <div 
         class="column" 
-        *ngFor="let movie of childData"
+        *ngFor="let movie of filteredMovies"
     >   
         <a
             class="movie-name"
@@ -32,3 +32,36 @@
     </div>
 </div>
 
+<div *ngIf="!categoryClicked" class="movie-container row">
+    <h1> {{ title }} </h1>
+    <div 
+        class="column" 
+        *ngFor="let movie of movies"
+    >   
+        <a
+            class="movie-name"
+            routerLink="{{ '/movie-details/'+movie.imdbID }}"
+        >
+            <img 
+                class="thumbnail"
+                src="{{ movie.Poster }}" 
+                alt="{{ movie.Title }}" 
+                width="189.33" 
+                height="280.2"
+            >
+        </a>
+        <h3 class="overflow-text">
+            <a 
+                title="{{ movie.Title }}"
+                routerLink="{{ '/movie-details/'+movie.imdbID }}"
+            >
+                {{ movie.Title }}
+            </a>
+        </h3>
+        <div>
+            <span> {{ movie.Year }} </span>
+            <span class="dot"></span>
+            <span> {{ movie.Runtime }}</span>
+        </div>
+    </div>
+</div>

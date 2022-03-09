@@ -1,26 +1,37 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ChangeDetectionStrategy, OnChanges, SimpleChanges } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Movies } from '../../Movie';
 
 @Component({
   selector: 'app-display-movies',
   templateUrl: './display-movies.component.html',
-  styleUrls: ['./display-movies.component.css']
+  styleUrls: ['./display-movies.component.css'],
+  
 })
-export class DisplayMoviesComponent implements OnInit {
+export class DisplayMoviesComponent implements OnInit, OnChanges {
   title: string = "Featured Movies"
   //Använd inte !: eller | undefined, gör movies till icket iterable.
   movies: Movies[] = [];
-  @Input() childData: any;
+  filteredMovies: Movies[] = [];
+
+  @Input() parentData: Movies[] = [];
+  @Input() categoryClicked!: boolean;
+  
+
   //Initiera alltid externa enheter i konstruktorn
   constructor(
     private movieService: MovieService,
   ) { }
 
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes['categoryClicked'].currentValue){
+      this.filteredMovies = changes['parentData'].previousValue;
+    }
+  }
+
   //Funkar som componentDidMount från react.
   ngOnInit(): void {
     this.getMovies();
-    this.childData = this.movies;
     //console.log("texttexttext", this.childData);
   }
 

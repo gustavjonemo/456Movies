@@ -31,17 +31,10 @@ export class SearchBarComponent implements OnInit{
   isSearching: boolean;
   movieDetails: any;
   name:string='';
-
-  ngAfterViewInit() {
-    //this.elementRef.nativeElement.ownerDocument
-    //    .body.style.backgroundColor = 'purple';
-}
+  
   constructor(
-    private elementRef: ElementRef,
     private httpClient: HttpClient,
-
     private movieService: MovieService,
-    //private displayMovies: DisplayMoviesComponent,
   ) {
     this.isSearching = false;
     this.apiResponse = [];
@@ -54,7 +47,7 @@ export class SearchBarComponent implements OnInit{
 
 
   ngOnInit() {
-    console.log(this.movieSearchInput);
+    //console.log(this.movieSearchInput);
 
     fromEvent(this.movieSearchInput.nativeElement, 'keyup').pipe(
 
@@ -79,7 +72,7 @@ export class SearchBarComponent implements OnInit{
       this.searchGetCall(text).subscribe((res) => {
         //console.log('res', res);
         this.isSearching = false;
-        this.getMovies(res.Search .filter((name: { Poster: string, Type: string;}) => //Du kan lägga till fler filter om du vill
+        this.getMovies(res.Search.filter((name: { Poster: string, Type: string;}) => //Du kan lägga till fler filter om du vill
         name.Poster !== "N/A" && name.Type === "movie"
       ));
         this.apiResponse = res;
@@ -98,10 +91,8 @@ export class SearchBarComponent implements OnInit{
     if (term === '') {
       return of([]);
     }
-    
     return this.httpClient.get('http://www.omdbapi.com/?s=' + term + '&apikey=' + APIKEY, { params: PARAMS.set('search', term) });
   }
-
 
   isShowDiv = true; 
   getDetails(movie: any){
@@ -113,7 +104,6 @@ export class SearchBarComponent implements OnInit{
       this.movieDetails=data;
     })
   }
-  
 
   getMovies(apiResults: any[]){
     apiResults.forEach(e => {
@@ -126,26 +116,4 @@ export class SearchBarComponent implements OnInit{
   emptyArray(){
     return this.movieDetails = [];
   }
-
-
 }
-
-
-/*
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-search-bar',
-  templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.css']
-})
-export class SearchBarComponent implements OnInit {
-  title: string = 'Search bar component';
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
-*/
