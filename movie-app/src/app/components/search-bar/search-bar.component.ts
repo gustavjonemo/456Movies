@@ -79,9 +79,12 @@ export class SearchBarComponent implements OnInit{
       this.searchGetCall(text).subscribe((res) => {
         //console.log('res', res);
         this.isSearching = false;
-        this.getMovies(res.Search);
+        this.getMovies(res.Search .filter((name: { Poster: string, Type: string;}) => //Du kan lägga till fler filter om du vill
+        name.Poster !== "N/A" && name.Type === "movie"
+      ));
         this.apiResponse = res;
         console.log(this.movieDetails);
+        this.emptyArray(); //Töm för att inte uppdatering skall haka upp sig
       }, (err) => {
         this.isSearching = false;
         //console.log('error', err);
@@ -118,6 +121,10 @@ export class SearchBarComponent implements OnInit{
         this.movieDetails.push(res);
       })
     })
+  }
+
+  emptyArray(){
+    return this.movieDetails = [];
   }
 
 
