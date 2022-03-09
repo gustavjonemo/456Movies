@@ -40,7 +40,6 @@ export class FilterComponent implements OnInit {
     //this.addGenres();
   }
 
-
   onSelect(genre: string){
     //this.filterGenre = genre; 
     console.log("Vald Genre: "+genre);

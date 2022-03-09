@@ -4,17 +4,17 @@
 >   
     <div>
         <nav>
-            <img class="img-thumbnail" src="{{ movie.Poster }}"/>
+            <img class="thumbnail" src="{{ movie.Poster }}"/>
         </nav>
     </div>
 
     <div>
         <h1>{{ movie.Title }}</h1>
-        <h4>Released: {{ movie.Released }}</h4>
-        <h4>Genre: {{ movie.Genre }}</h4>
-        <h4>Director/s: {{ movie.Director }}</h4>
-        <h4>Writer/s: {{ movie.Writer }}</h4>
-        <h4>Actors: {{ movie.Actors }}</h4>
+        <h6>Released: {{ movie.Released }}</h6>
+        <h6>Genre: {{ movie.Genre }}</h6>
+        <h6>Director/s: {{ movie.Director }}</h6>
+        <h6>Writer/s: {{ movie.Writer }}</h6>
+        <h6>Actors: {{ movie.Actors }}</h6>
         <p class="plot">{{ movie.Plot }}</p>
     </div>
 

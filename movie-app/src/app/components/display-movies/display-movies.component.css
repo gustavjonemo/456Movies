@@ -28,9 +28,9 @@
   display: table;
 }
 
-.img-thumbnail {
+.thumbnail {
   border-radius: 8px;
-}
+} 
 
 .dot {
   height: 4px;
