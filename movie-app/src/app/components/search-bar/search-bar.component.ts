@@ -1,11 +1,7 @@
 import { Component , ViewChild, ElementRef, OnInit} from '@angular/core';
-import { of } from "rxjs";
+import { of, fromEvent, Observable } from "rxjs";
 import { debounceTime, map, distinctUntilChanged, filter} from "rxjs/operators";
-import { fromEvent } from 'rxjs';
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Observable } from 'rxjs';
-
-//import { DisplayMoviesComponent } from '../display-movies/display-movies.component';
 import { MovieService } from '../../services/movie.service';
 
 const APIKEY = "1d799ea5";
