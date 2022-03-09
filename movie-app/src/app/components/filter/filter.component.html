@@ -1,4 +1,26 @@
-<header>
-    <h1>{{ title }}</h1>
-    <app-display-movies></app-display-movies>   
+<!--<header>
+    <h1 style="position: relative;left: 20%;">{{ title }}</h1>
 </header>
+-->
+
+<form [formGroup]="checkboxGroupForm">
+  <div class="btn-group" role="group">
+    <label class="btn-primary" ngbButtonLabel> 
+      <input type="checkbox" class="btn-check" formControlName="action"  (click)="onSelect('action')" ngbButton> Action 
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" class="btn-check" formControlName="adventure" (click)="onSelect('adventure')" ngbButton> Adventure
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" class="btn-check" formControlName="animation" (click)="onSelect('animation')" ngbButton> Animation
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" class="btn-check" formControlName="biography" (click)="onSelect('biography')" ngbButton> Biography
+    </label>
+    <label class="btn-primary" ngbButtonLabel>
+      <input type="checkbox" class="btn-check" formControlName="christmas" (click)="onSelect('christmas')" ngbButton> Christmas
+    </label>
+  </div>
+</form>
+
+<app-display-movies [childData]="filteredMovies"></app-display-movies>   

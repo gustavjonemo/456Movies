@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MovieService } from '../../services/movie.service';
 import { Movies } from '../../Movie';
 
@@ -8,10 +8,10 @@ import { Movies } from '../../Movie';
   styleUrls: ['./display-movies.component.css']
 })
 export class DisplayMoviesComponent implements OnInit {
-  title: string = "Movies"
+  title: string = "Featured Movies"
   //Använd inte !: eller | undefined, gör movies till icket iterable.
   movies: Movies[] = [];
-
+  @Input() childData: any;
   //Initiera alltid externa enheter i konstruktorn
   constructor(
     private movieService: MovieService,
@@ -20,6 +20,8 @@ export class DisplayMoviesComponent implements OnInit {
   //Funkar som componentDidMount från react.
   ngOnInit(): void {
     this.getMovies();
+    this.childData = this.movies;
+    //console.log("texttexttext", this.childData);
   }
 
   //Fyller i array movies som skall visa upp filmerna i html filen, använder interface för att fylla i värden från JSON

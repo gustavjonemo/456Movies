@@ -9,6 +9,17 @@ import { FilterComponent } from './components/filter/filter.component';
 import { DisplayMoviesComponent } from './components/display-movies/display-movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatChipsModule} from '@angular/material/chips';
+
+//import { NgModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +33,16 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
+
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatChipsModule,
+
+    //NgModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

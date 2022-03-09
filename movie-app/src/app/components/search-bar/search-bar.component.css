@@ -1,0 +1,89 @@
+.movie-container {
+  max-width: 1370px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.overflow-text {
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.column {
+  float: left;
+  width: auto;
+  padding: 8px;
+}
+
+.row {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.img-thumbnail {
+  border-radius: 8px;
+}
+
+.dot {
+  height: 4px;
+  width: 4px;
+  margin: 5px 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+a:link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+a:visited {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color:rgb(162, 0, 255);
+}
+
+img:hover {
+  opacity: 0.5;
+  filter: blur(0.5px);
+}
+
+
+
+
+
+
+.wrapper {
+  position: relative;
+  width: 215px;
+
+}
+
+.form-control-icon {
+  position: absolute;
+  top: 23px;
+  left: 8px;
+  width: 14px;
+}
+
+.form-control {
+  border: 1px solid grey;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: #f5f5f5;
+}
