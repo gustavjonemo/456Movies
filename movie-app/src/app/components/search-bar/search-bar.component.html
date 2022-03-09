@@ -10,14 +10,14 @@
 
     <div 
         class="column" 
-        *ngFor="let movie of apiResponse['Search']"
+        *ngFor="let movie of movieDetails"
     >   
         <a
             class="movie-name"
             routerLink="{{ '/movie-details/'+ movie['imdbID'] }}"
         >
             <img 
-            class="img-thumbnail blur" 
+            class="thumbnail blur" 
             src="{{movie['Poster']}}" 
             alt="{{movie['Title']}}" 
             width="189.33" 

@@ -8,17 +8,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FilterComponent } from './components/filter/filter.component';
 import { DisplayMoviesComponent } from './components/display-movies/display-movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {MatCardModule} from '@angular/material/card';
-import {MatGridListModule} from '@angular/material/grid-list';
-import {MatChipsModule} from '@angular/material/chips';
-
-//import { NgModule } from '@ng-bootstrap/ng-bootstrap';
-
 
 @NgModule({
   declarations: [
@@ -33,15 +24,7 @@ import {MatChipsModule} from '@angular/material/chips';
     AppRoutingModule,
     HttpClientModule,
     HttpClientJsonpModule,
-
-    BrowserAnimationsModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatCardModule,
-    MatGridListModule,
-    MatChipsModule,
-
-    //NgModule,
+    NgbModule,
     ReactiveFormsModule
   ],
   providers: [],

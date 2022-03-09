@@ -1,7 +1,6 @@
 import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 //import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, ReactiveFormsModule} from '@angular/forms';
-import { NgModule } from '@angular/core';
 import { Movies } from 'src/app/Movie';
 
 import { MovieService } from 'src/app/services/movie.service';
@@ -15,8 +14,6 @@ export class FilterComponent implements OnInit {
   title: string = 'Filter component';
   movies: Movies[] = [];
   filteredMovies: Movies[] = [];
-  genres: string[] = [];
-  filterGenre: string = '';  //den vi matchar mot filmgenre
   @Output() ArrayEmitter = new EventEmitter<any[]>();
   constructor(private movieService: MovieService, formBuilder : FormBuilder
     ) {
@@ -41,10 +38,9 @@ export class FilterComponent implements OnInit {
   }
 
   onSelect(genre: string){
-    //this.filterGenre = genre; 
-    console.log("Vald Genre: "+genre);
+    //console.log("Vald Genre: "+genre);
     //this.checkboxGroupForm.get(genre)?.setValue(false);
-    console.log("Pressed: "+!this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
+    //console.log("Pressed: "+!this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
     this.getMovies();
     this.filterMovies(genre); //Skickar in genre som skall filtreras
     console.log(this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
@@ -55,14 +51,6 @@ export class FilterComponent implements OnInit {
     //Tömmer de efter vi är klara, funkar ba med en kategori
     this.movies = [];
     this.filteredMovies = [];
-  }
-
-  addGenres(){
-    this.movies.forEach(movie => {
-      if(!!this.genres.includes(movie.Genre)){
-        this.genres.push(movie.Genre);
-      }
-    });
   }
 
   filterMovies(genre: string){

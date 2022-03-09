@@ -47,8 +47,8 @@ export class SearchBarComponent implements OnInit{
     this.apiResponse = [];
     this.movieDetails = [];
 
-    console.log(this.movieSearchInput);
-    console.log("Test1");
+    //console.log(this.movieSearchInput);
+    //console.log("Test1");
     //this.displayMovies.movies = [];
   }
 
@@ -77,14 +77,14 @@ export class SearchBarComponent implements OnInit{
       this.isSearching = true;
 
       this.searchGetCall(text).subscribe((res) => {
-        console.log('res', res);
+        //console.log('res', res);
         this.isSearching = false;
         this.getMovies(res.Search);
         this.apiResponse = res;
         console.log(this.movieDetails);
       }, (err) => {
         this.isSearching = false;
-        console.log('error', err);
+        //console.log('error', err);
       });
 
     });
