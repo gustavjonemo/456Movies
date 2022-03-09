@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-//import { NgbButtonsModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup } from '@angular/forms';
-
 import { Movies } from 'src/app/Movie';
-
 import { MovieService } from 'src/app/services/movie.service';
+
 @Component({
   selector: 'app-filter',
   templateUrl: './filter.component.html',
