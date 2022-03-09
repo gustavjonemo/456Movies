@@ -8,7 +8,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { FilterComponent } from './components/filter/filter.component';
 import { DisplayMoviesComponent } from './components/display-movies/display-movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +18,6 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatChipsModule} from '@angular/material/chips';
 
 //import { NgModule } from '@ng-bootstrap/ng-bootstrap';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
