@@ -3,15 +3,15 @@
   margin: 5px auto;
   overflow: auto;
   min-height: 5px;
-  padding: 30px;
+  padding: 20px;
   border-radius: 5px;
 }
 
 .movie-container {
   max-width: 1370px;
-  margin: 30px auto;
+  margin: 10px auto;
   overflow: auto;
-  padding: 30px;
+  padding: 10px;
   border-radius: 5px;
 }
 
