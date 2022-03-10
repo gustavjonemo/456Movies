@@ -1,4 +1,5 @@
 export interface Movies {
+    Search: any;
     Title: string,
     Year: number,
     Rated: string,

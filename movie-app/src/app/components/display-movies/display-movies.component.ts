@@ -16,7 +16,6 @@ export class DisplayMoviesComponent implements OnInit, OnChanges {
 
   @Input() parentData: Movies[] = [];
   @Input() categoryClicked!: boolean;
-  
 
   //Initiera alltid externa enheter i konstruktorn
   constructor(
@@ -24,6 +23,7 @@ export class DisplayMoviesComponent implements OnInit, OnChanges {
   ) { }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log("Changes caught",changes);
     if(changes['categoryClicked'].currentValue){
       this.filteredMovies = changes['parentData'].previousValue;
     }

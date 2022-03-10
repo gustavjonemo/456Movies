@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Movies } from '../Movie';
 
 
@@ -14,6 +14,10 @@ export class MovieService {
   constructor(
     private http: HttpClient
   ) { }
+
+  searchGetCall(term: string): Observable<Movies> {
+    return this.http.get<Movies>(`http://www.omdbapi.com/?s=${term}&apikey=1d799ea5`);
+  }
 
   //http fetch request av en film med ett specifikt id. &plot=full för hela ploten av filmen
   fetchMovie(imdbId: string): Observable<Movies> {
