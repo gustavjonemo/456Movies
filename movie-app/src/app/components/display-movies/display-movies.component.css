@@ -5,7 +5,6 @@
   min-height: 300px;
   padding: 10px;
   border-radius: 5px;
-  
 }
 
 .overflow-text {
@@ -61,6 +60,12 @@ img:hover {
   opacity: 0.5;
   filter: blur(0.5px);
 }
-h1{
-  margin-left: 30px;
+
+.search-container {
+  max-width: 1370px;
+  margin: 5px auto;
+  overflow: auto;
+  min-height: 5px;
+  padding: 15px;
+  border-radius: 5px;
 }

@@ -39,6 +39,7 @@ export class FilterComponent implements OnInit {
     console.log("Filtered Movies: ",this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
     this.buttonClicked = !this.buttonClicked;
     //Tömmer de efter vi är klara, funkar ba med en kategori
+    this.checkboxGroupForm.reset();
     this.movies = [];
     this.filteredMovies = [];
   }
@@ -47,7 +48,9 @@ export class FilterComponent implements OnInit {
   filterMovies(genre: string){
     this.movies.forEach(movie => {
       if(movie.Genre.toLowerCase().includes(genre.toLowerCase())){ //kontroll
-        this.filteredMovies.push(movie);  //ev tilläggning
+        if(!this.filteredMovies.includes(movie)){
+          this.filteredMovies.push(movie);  //ev tilläggning
+        }
       }
     });
   }
