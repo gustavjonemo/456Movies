@@ -1,4 +1,4 @@
-import { Component , ViewChild, ElementRef, OnInit} from '@angular/core';
+import { Component , ViewChild, ElementRef, OnInit, HostBinding} from '@angular/core';
 import { fromEvent } from "rxjs";
 import { debounceTime, map, distinctUntilChanged, filter} from "rxjs/operators";
 import { MovieService } from '../../services/movie.service';
@@ -6,7 +6,7 @@ import { MovieService } from '../../services/movie.service';
 @Component({
   selector: 'app-search-bar',
   templateUrl: './search-bar.component.html',
-  styleUrls: ['./search-bar.component.css']
+  styleUrls: ['./search-bar.component.css'],
 })
 
 export class SearchBarComponent implements OnInit{
@@ -14,6 +14,7 @@ export class SearchBarComponent implements OnInit{
   movieSearchInput!: ElementRef;
   movieDetails: any[] = [];
   loading: boolean = false;
+  search : String ="";
   
   constructor(
     private movieService: MovieService,
@@ -35,11 +36,13 @@ export class SearchBarComponent implements OnInit{
       // subscription for response
     ).subscribe((text: string) => {
       this.movieService.searchGetCall(text).subscribe((res) => {
+        this.loading = true;
         //console.log('res', res);
         this.getMovies(res.Search.filter((name: { Poster: string, Type: string}) => //Du kan lägga till fler filter om du vill
         name.Poster !== "N/A" && name.Type === "movie" 
       ));
         //console.log(this.movieDetails);
+        this.loading = false;
         this.emptyArray(); //Töm för att inte uppdatering skall haka upp sig
       });
     });

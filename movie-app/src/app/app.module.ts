@@ -11,6 +11,14 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
+import { NgMatSearchBarModule } from 'ng-mat-search-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +33,14 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     HttpClientJsonpModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
+    NgMatSearchBarModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule,
+    MatProgressBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
