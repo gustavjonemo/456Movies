@@ -11,6 +11,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -28,7 +29,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     HttpClientJsonpModule,
     NgbModule,
     ReactiveFormsModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
