@@ -10,13 +10,7 @@ import { DisplayMoviesComponent } from './components/display-movies/display-movi
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
-
-import { NgMatSearchBarModule } from 'ng-mat-search-bar';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import {MatProgressBarModule} from '@angular/material/progress-bar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 
 @NgModule({
@@ -34,12 +28,6 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     HttpClientJsonpModule,
     NgbModule,
     ReactiveFormsModule,
-
-    NgMatSearchBarModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatIconModule,
     MatProgressBarModule
   ],
   providers: [],

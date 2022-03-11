@@ -32,18 +32,18 @@ export class FilterComponent implements OnInit {
   }
 
   onSelect(genre: string){
-    console.log("Pressed: "+!this.checkboxGroupForm.get(genre)?.value); //för att fatta mer om min checkBoxFormGroup
+    console.log("Pressed: "+!this.checkboxGroupForm.get(genre)?.value);
 
     this.getMovies();
     this.filterMovies(genre); //Skickar in genre som skall filtreras
     console.log("Filtered Movies: ",this.filteredMovies); // skriver ut korrekt lista på filmer med denna genre
     this.buttonClicked = !this.buttonClicked;
+    
     //Tömmer de efter vi är klara, funkar ba med en kategori
     this.checkboxGroupForm.reset();
     this.movies = [];
     this.filteredMovies = [];
   }
-
   
   filterMovies(genre: string){
     this.movies.forEach(movie => {

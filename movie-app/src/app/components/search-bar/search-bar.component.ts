@@ -1,4 +1,4 @@
-import { Component , ViewChild, ElementRef, OnInit, HostBinding} from '@angular/core';
+import { Component , ViewChild, ElementRef, OnInit} from '@angular/core';
 import { fromEvent } from "rxjs";
 import { debounceTime, map, distinctUntilChanged, filter} from "rxjs/operators";
 import { MovieService } from '../../services/movie.service';
@@ -21,7 +21,6 @@ export class SearchBarComponent implements OnInit{
   ) {  }
 
   ngOnInit() {
-    //console.log(this.movieSearchInput);
     fromEvent(this.movieSearchInput.nativeElement, 'keyup').pipe(
       // get value
       map((event: any) => {
@@ -37,13 +36,11 @@ export class SearchBarComponent implements OnInit{
     ).subscribe((text: string) => {
       this.movieService.searchGetCall(text).subscribe((res) => {
         this.loading = true;
-        //console.log('res', res);
-        this.getMovies(res.Search.filter((name: { Poster: string, Type: string}) => //Du kan lägga till fler filter om du vill
+        this.getMovies(res.Search.filter((name: { Poster: string, Type: string}) => 
         name.Poster !== "N/A" && name.Type === "movie" 
       ));
-        //console.log(this.movieDetails);
         this.loading = false;
-        this.emptyArray(); //Töm för att inte uppdatering skall haka upp sig
+        this.emptyArray(); //Empty movieDetails to facilitate smooth updating
       });
     });
   }
